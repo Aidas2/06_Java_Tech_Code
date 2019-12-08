@@ -1,0 +1,4 @@
+Nutariau neperdarinėti produkto konstruktoriaus.
+
+Bet dar nėra aišku kaip teisingai saugoti krepšelį.
+Dabar kol kas krepšelį išsaugo tik vieną ir jis yra visiems vartotojams.

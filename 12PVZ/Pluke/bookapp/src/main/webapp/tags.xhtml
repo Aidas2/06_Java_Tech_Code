@@ -1,0 +1,41 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="sablonas.xhtml">
+
+	<ui:define name="turinys">
+		<h:form>
+
+			<p:dataTable value="#{authorListPageData.foundAuthors}" var="author">
+				<p:column headerText="Author name">
+					<h:outputText value="#{author.name} #{author.lastname}" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+		
+		<h:form>
+			<p:panel id="basic" header="Search" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+					<h:outputLabel for="tagSerach" value="Tag"></h:outputLabel>
+					<h:inputText id="tagSerach"
+						value="#{authorListPageData.searchTag}">
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="tagSerach" />
+				</h:panelGrid>
+
+			</p:panel>
+
+			<h:commandButton action="#{authorListPage.searchTags}" value="Search"
+				update="grid"></h:commandButton>
+		</h:form>
+
+	</ui:define>
+
+	<ui:define name="pavadinimas">
+ 	 	Search tags
+ 	 </ui:define>
+
+</ui:composition>

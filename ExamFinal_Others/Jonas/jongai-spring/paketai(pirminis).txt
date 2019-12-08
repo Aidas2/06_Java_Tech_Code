@@ -1,0 +1,70 @@
+lt.sventes
+	App.java 	- aplikaciją paleidžiantis failas
+	AppConfig.java	- konfigūracinis failas (neaišku ar būtinas)
+	CorsConfig	- Padaro galimybę kreiptis iš įvairių portų
+
+lt.sventes.config
+	SecurityConfig.java	- Spring Security pagrindinis konfigūracinis failas
+
+lt.sventes.controller
+	AuthController.java	- Prisijingimą kontroliuojantis failas
+
+lt.sventes.contries
+	Country.java		- @Entity šalies klasė
+	CountryData.java	- DTO modelis, skirtas transformuoti duomenis, paimtus iš duombazės ir perdavimui jų į frontą.
+
+lt.sventes.countries.controller
+	CountryController.java		- @RestController klasė. Šalių kontroleris, skirtas darbui su FRONT'o užklausomis.
+	CreateCountryCommand.java	- DTO modelis, skirtas naujos šalies sukūrimui pagal pateiktus duomenis.
+
+lt.sventes.countries.service
+	CountryRepository.java	- Šalių repositorijos interfeisas
+	CountryService.java	- @Service klasė. Šalių serviso klasė, skirta darbui su duomenų baze.
+
+lt.sventes.exception
+	3 klasės - reikalingos, kad mestų tam tikrus exception, kai Spring Security kažkas vyksta negerai.
+
+lt.sventes.holidays
+	Holiday.java		- @Entity šventės klasė.
+	HolidayData.java	- DTO modelis, skirtas transformuoti duomenis, paimtus iš duombazės ir perdavimui jų į frontą.
+
+lt.sventes.holidays.controller
+	HolidayController	- @RestController klasė. Švenčių kontroleris, skirtas darbui su FRONT'o užklausomis.
+	CreateHolidayCommand	- DTO modelis, skirtas naujos šventės sukūrimui pagal pateiktus duomenis.
+
+lt.sventes.holidays.service
+	HolidayRepozitory.java	- Švenčių repozitorijos interfeisas
+	HolidayService.java	- @Service klasė. Švenčių serviso klasė, skirta darbui su duomenų baze.
+
+
+lt.sventes.models
+	Role.java	- @Entity vartotojo rolių klasė.
+	RoleName.java	- ENUM, kur yra saugomos galimos vartotojo rolės
+	User.java	- @Entity vartotojų klasė.
+
+lt.sventes.roles.service
+	RoleRepository.java	- Rolių repozitorijos interfeisas
+
+lt.sventes.security
+	CurrentUser.java		- interfeisas, kuris turi daug visokių anotacijų (suprask, dėl jų atsineša su savimi kažkokius 							metodus)
+	CustomUserDetailsService.java	- @Service. Vartotojų servisas, naudojamas prisijungimo metu.
+	Jwt***** (3 failai)		- Susiję su security ir tokenais.
+	UserPrincipal.java		- vartotojo klasė, naudojama tam, kad sukurti vartotojo, kuris prisijungė objektą (kažkas tokio).
+
+lt.sventes.security.payload
+	ApiResponse.java			-
+	JwtAuthentificationResponse.java	-
+	LoginRequest.java			- DTO klasė, kuri skirta tam, kad prisijungimo metu pateiktus duomenis sudėtų į šią 								klasę.
+	SignUpRequest.java			- DTO klasė, kuri skirta tam, kad registruojant naują vartotoją, būtų pateikti šitie 								duomenys apie vartotoją. (??????)
+
+lt.sventes.users.controller
+	UserController.java	- @RestController. Skirta pateikti duomenis į frontą apie prisijungusį vartotoją.
+	UserGetCommand.java	- DTO klasė, naudojama nusikopijuoti duomenis iš UserPrincipal, kad juos pateikti į frontą.
+	CreateUserCommand.java	- REALIAI NENAUDOJAMA. Tipo skirta naujo vartotojo kūrimui, bet tai jau yra išpręstą per SignUpRequest.
+
+lt.sventes.users.service
+	UserRepository.java	- Vartotojų repozitorijos interfeisas
+	UserService.java	- @Service. REALIAI NENAUDOJAMA. Skirta naujo vartotojo kūrimui, bet tai išspręsta jau.
+
+
+

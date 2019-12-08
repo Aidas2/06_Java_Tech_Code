@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <title>Customers: 
+        <ui:insert name="title">
+            No title
+        </ui:insert>
+    </title>
+    <h:outputStylesheet name="style.css"></h:outputStylesheet>
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="menu">
+            <h:form>
+                <p:tabMenu>
+                    <p:menuitem value="Customers" outcome="main" icon="ui-icon-scissors">
+                    </p:menuitem>
+                    <p:menuitem value="Survey Data" outcome="dataView" icon="ui-icon-scissors">
+                    </p:menuitem>
+                </p:tabMenu>
+            </h:form>
+        </div>
+        <div id="layout">
+            <div id="leftside">
+                <ui:insert name="leftside" />
+            </div>
+            <div id="rightside">
+                <ui:insert name="rightside" />
+            </div>
+        </div>
+        <div id="contents">
+            <ui:insert name="content" />
+        </div>
+    </div>
+    <div id="footer-container">
+        <ui:insert name="footer" />
+    </div>
+</h:body>
+</html>

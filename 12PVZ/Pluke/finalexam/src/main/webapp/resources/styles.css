@@ -1,0 +1,21 @@
+
+body {
+    padding: 12px;
+}
+
+table {
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+table tr td,th {
+    margin: 0px;
+    border: 0px;
+}
+
+table tr th {
+    border-bottom: 1px solid black;
+}

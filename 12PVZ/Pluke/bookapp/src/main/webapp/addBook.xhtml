@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="sablonas.xhtml">
+
+	<ui:define name="turinys">
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+			<p:panel id="basic" header="Book details" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+				
+					<h:outputLabel for="bookTitle" value="Book title"></h:outputLabel>
+					<h:inputText id="bookTitle" value="#{addBookPage.newBook.title}">
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="bookTitle" />
+					
+					<h:outputLabel for="bookGenre" value="Book genre"></h:outputLabel>
+					<h:inputText id="bookGenre" value="#{addBookPage.genre}">
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="bookGenre" />
+					
+					<h:outputLabel for="bookReleaseDate"
+						value="Book release date (YYYY-MM-DD)"></h:outputLabel>
+					<h:inputText id="bookReleaseDate"
+						value="#{addBookPage.newBook.releaseDate}"
+						converterMessage="Use format YYYY-MM-DD">
+						<f:convertDateTime pattern="yyyy-M-d" />
+					</h:inputText>
+					
+					<p:message for="bookReleaseDate" />
+				</h:panelGrid>
+
+				<h:commandButton action="#{addBookPage.addNew}" value="Add new"></h:commandButton>
+			</p:panel>
+		</h:form>
+
+	</ui:define>
+
+	<ui:define name="pavadinimas">
+ 	 	Add new book
+ 	 </ui:define>
+
+</ui:composition>

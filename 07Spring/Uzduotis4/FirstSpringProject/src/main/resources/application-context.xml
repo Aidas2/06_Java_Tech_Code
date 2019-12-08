@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Bean definitions goes there -->
+
+<!-- Uzduotis 1 (ir 3_02). Užregistruoti ServiceA bean application-context.xml byloje -->
+<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+<property name="message" value="Uzduotis 1 (ir 3_02). ServiceA message (paduota per konstruktoriu 3_02)" />
+</bean>
+
+<!-- Uzduotis 2. Užregistruoti bean application-context.xml byloje -->
+<bean class="lt.itmokymai.spring.InitHelloWorld">
+</bean>
+
+<!-- Uzduotis 3.01 Užregistruoti ServiceB bean application-context.xml byloje -->
+<!-- <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">-->
+<!-- <property name="serviceA" ref="serviceABean" />-->
+<!-- </bean>-->
+
+<!-- Uzduotis 3.02. Pakeisti lt.itmokymai.spring.ServiceB klasę, kad naudotų ServiceA priklausomybės injekciją per konstruktorių.
+Pakeisti ServiceB bean deklaraciją-->
+<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">
+	<constructor-arg ref="serviceABean"/>
+</bean>	
+
+<!-- Uzduotis 3.03. Pridėti ServiceC bean deklaraciją src/main/resources/application-context.xml
+byloje taip, kad paveldėtų ServiceA bean message atributo priskirtą reikšmę..-->
+	<bean id="serviceCBean" class="lt.itmokymai.spring.ServiceC" parent="serviceABean">
+	</bean>
+
+<!-- 4.01 uzduotis. Aprašyti spring bean kolekciją, kurioje būtų produktų sąrašas (kaip React).-->
+	<bean id="productList" class="lt.itmokymai.spring.ProductListClass">
+		<property name="productList">
+			<list>
+				<ref bean="Samsung1" />
+				<ref bean="Samsung2" />
+				<ref bean="Samsung3" />
+			</list>
+		</property>
+	</bean>
+
+<!-- 4.02 uzduotis. Kiekvienas produktas taip pat savaime turi būti bean
+Produktas (produkto klasė) turi turėti title, image ir kitus parametrus (kaip React)-->
+	<bean id="Samsung1" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 1" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc1" />
+		<property name="price" value="15.0" />
+		<property name="quantity" value="1" />
+	</bean>
+	
+	<bean id="Samsung2" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 2" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc2" />
+		<property name="price" value="16.0" />
+		<property name="quantity" value="25" />
+	</bean>
+	
+	<bean id="Samsung3" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 3" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc3" />
+		<property name="price" value="155.0" />
+		<property name="quantity" value="10" />
+	</bean>
+
+</beans>

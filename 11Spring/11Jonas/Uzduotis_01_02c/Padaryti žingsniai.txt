@@ -1,0 +1,28 @@
+1. Yra klasė Cart, kuri yra @Entity.
+2. Ji turi laukus id, username ir private List<Product> products;
+3. Tas laukas private List<Product> products turi anotaciją @ManyToMany(cascade = {CascadeType.ALL})
+4. Yra klasė Product, kuri yra @Entyti.
+5. Ji turi laukus id, title, price, quantity, private ProductDetails productDetails ir private List<Cart> cart.
+6. Laukas private ProductDetails productDetails turi anotaciją @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH}). (bet su šituo lyg ir nėra bėdų)
+7. Laukas private List<Cart> cart turi anotaciją @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH}).
+8. Įsivaizduoju, kad surišau Cart su Product Many-To-Many ryšiu. Nežinau ar gerai įsivaizduoju!
+9. Klasėje Cart turiu metodą 
+	public void addProduct(Product product) {
+		this.products.add(product);
+	}
+10. Šį metodą naudoju, kai CartService noiru papildyti listą su prekėmis prie šio krepšelio. Bet šioje vietoje aplikacija lūžta. Kalba kažką apie NUllPointerException.
+
+Pranešimas konsolėje:
+2018-12-14 10:54:56.382 ERROR 26853 --- [nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+Pranešimas swaggeryje:
+  "timestamp": "2018-12-14T08:54:56.392+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "No message available",
+  "path": "/api/users/Jonas/cart-products"
+
+11. Jeigu klasėje Product nuo lauko private List<Cart> cart nuimu anotaciją ManyToMany, tai aplikacija nesikompiliuoja.
+
+Jaučiu, kad mažiausiai dvejose vietose kažką esu padaręs ne taip. Bet nesuprantu ką.
+

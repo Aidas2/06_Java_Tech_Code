@@ -1,0 +1,36 @@
+/* Stilių pavyzdžiai */
+
+/* h5 headerio spalvos nustatymas */
+/* h5 {
+    color: blue;
+  }
+
+/* paragrafo spalvos nustatymas */
+/*p {
+    color: red;
+  }*/
+
+/* div, kuris turi klasę "pabraukti" formatavimas - apatinio rėmelio nustatymas */
+div.pabraukti {
+  border-bottom: 1px solid gray;
+}
+
+
+
+
+/* Teksto išdėstymas:
+text-align: center;
+
+Linko pabraukimo panaikinimas:
+a {
+  text-decoration: none;
+}
+
+Fonto dydžio nustatymas:
+font-size: 250%;
+font-size: 40px;
+font-size: 2.5em; /* 40px/16=2.5em */
+
+/*
+Fono spalvos nustatymas:
+background-color: lightblue; */

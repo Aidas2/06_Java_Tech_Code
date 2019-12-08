@@ -1,0 +1,37 @@
+1. Sukurti klases su anotacija @Entity (klases Country, Holiday, Year su savo laukais, tusciu ir ne konstruktoriais, geteriais/seteriais)
+2. Sukurti klases repositoriju (kaip interfeisus kurie extendina JpaRepository. Itraukti ieskojimo ir istrinimo metodus. 
+Sios repositorijos bus paduodamos i servisus (sukuriami 4-me zingsnyje).
+
+3. Sukurti klases create/return:
+#Jonas COMMAND:			#Migle REST:			#Andrius DTO:			
+CreateCountryCommand.java	CountryRest.java		CreateCountryDTO.java
+CountryData.java		CountryRestResponse.java	ReturnCountryDTO.java
+EditCountryCommand.java 
+
+CreateHolidayCommand.java	HolidayRest.java		CreateHolidayDTO.java
+HolidayData.java		HolidayRestResponse.java	ReturnHolidaysDTO.java
+EditHolidayCommand.java
+
+4. Sukurti klases su anotacija @Service (CountryService, HolidayService).
+Autowirinti repositorijas (sukurtos ankstesniame zingsnyje) 
+Sie servisai bus paduodami i controller'ius (sukuriami sekanciame zingsnyje).
+
+5. Sukurti klases su anotacija @RestController.
+paduoti servisus (is 4-ojo zingsnio), paduoti create/return (is 3-ojo zingsnio)
+
+
+
+
+
+application.properties
+jdbc:h2:file://tmp/baze1021.db		Jonas
+jdbc:h2:file://tmp/test0002.db		Andrius
+jdbc:h2:file://tmp/sventes.db		Migle
+jdbc:h2:file://tmp/lib.db		Julius
+jdbc:h2:file://tmp/holiday4.db 		Aidas
+
+spring.datasource.url=jdbc:h2:file://home/aidas/Documents/06_JavaTech/12PVZ/h2_duomenu_bazes/dbjongai.db;
+
+
+ 
+		

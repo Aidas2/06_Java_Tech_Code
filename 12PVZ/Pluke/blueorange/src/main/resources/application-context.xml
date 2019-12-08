@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="anoproc" class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	
+	<bean id="entityManagerFactory"	class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="TrainDB" />
+	</bean>
+	
+	<bean id="trainRepo" class="infobalt.bluOrangeApp.repositories.jpa.TrainRepJPA" scope="singleton">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<bean id="vanRepo" class="infobalt.bluOrangeApp.repositories.jpa.VanRepJPA" scope="singleton">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<bean id="trainBean" class="infobalt.bluOrangeApp.beansai.TrainBean" scope="session" init-method="init" lazy-init="false">
+		<property name="trainRepo" ref="trainRepo" />
+		<property name="newTrain" ref="newTrain"/>
+	</bean>
+	
+	<bean id="vanBean" class="infobalt.bluOrangeApp.beansai.VanBean" scope="session" init-method="init" lazy-init="false">
+		<property name="vanRepo" ref="vanRepo" />
+		<property name="trainRepo" ref="trainRepo" />
+		<property name="newVan" ref="newVan"/>
+		<property name="trainBean" ref="trainBean"/>
+	</bean>
+	
+	<bean id="newTrain" class="infobalt.bluOrangeApp.entities.Train" scope="session"></bean>
+	<bean id="newVan" class="infobalt.bluOrangeApp.entities.Van" scope="session"></bean>
+
+</beans>

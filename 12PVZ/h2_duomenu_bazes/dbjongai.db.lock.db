@@ -1,0 +1,6 @@
+#FileLock
+#Sun May 26 09:50:43 EEST 2019
+hostName=aidas-X550CL
+id=16af2e7df61f4bfbd9228e64727ea744752a66c8e85
+method=file
+server=127.0.1.1\:32823

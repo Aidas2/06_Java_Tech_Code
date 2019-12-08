@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ps="http://java.sun.com/jsf/passthrough">
+	
+	<h:head>
+	<title>Find your book</title>
+	<h:outputStylesheet name="styles.css"></h:outputStylesheet>
+	</h:head>
+	
+<h:body>
+
+	<h:form>
+	<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
+				
+	<p:panel id="basic" header="Books Search" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+				
+					<h:outputLabel for="book_title" value="Book title"></h:outputLabel>
+					<h:inputText id="book_title" value="#{bookListPageData.searchTitle}">
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="book_title" />
+
+					<h:outputLabel for="author" value="Author name or last name"></h:outputLabel>
+					<h:inputText id="author" value="#{bookListPageData.searchAuthorName}"></h:inputText>
+					<p:message for="author" display="icon" />
+					
+					<h:outputLabel for="genres" value="Book genre"></h:outputLabel>
+					<h:inputText id="genres" value="#{bookListPageData.searchGenres}"></h:inputText>
+					<p:message for="genres" display="icon" />
+					
+					<h:outputLabel for="year" value="Release Year"></h:outputLabel>
+					<h:inputText id="year" value="#{bookListPageData.searchYear}"></h:inputText>
+					<p:message for="year" display="icon" />
+				</h:panelGrid>
+			</p:panel>
+				
+		<p>
+			<h:commandButton value="Find Book"
+				action="#{bookList.searchBooks}" update="grid">
+			</h:commandButton>
+		</p>
+		<p>
+		<p:dataTable value="#{bookListPageData.foundBooks}" var="book">
+					<p:column headerText="Book Title">
+	 				#{book.title}
+	 				</p:column>
+	 				
+					<p:column headerText="Author">
+	 				#{book.author.name} #{book.author.lastname}
+	 				</p:column>
+	 				
+	 				<p:column headerText="Release Year">
+	 				#{book.releaseDate}
+	 				</p:column>
+	 				
+	 				<p:column headerText="Genre">
+	 				#{bookList.convertGenreListToGenreString(book.genres)}
+	 				</p:column>
+					<p:column headerText="Actions">
+
+						<!-- <p:commandLink actionListener="#{workersView.update(worker.code)}"
+							update="@form" value="Edit" resetValues="true"
+							immediate="true" /> -->
+
+						<p:commandLink actionListener="#{bookList.deleteSelectedBook(book)}"
+							update="@form" value="Delete" immediate="true">
+
+							<p:confirm header="Confirmation" message="Delete this data?"
+								icon="ui-icon-alert" />
+						</p:commandLink>
+					</p:column>
+				</p:dataTable>
+				</p>
+
+				<p:confirmDialog global="true">
+					<p:commandButton value="Yes" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="No" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
+			</h:form>
+	</h:body>
+</html>
+			
+		
+		

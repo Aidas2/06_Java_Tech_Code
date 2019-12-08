@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Bean definitions goes there -->
+
+	<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+		<property name="message" value="ServiceA message Jono" />
+	</bean>
+	
+	<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">
+		<constructor-arg ref="serviceABean"/>
+	</bean>
+	
+	<bean id="serviceCBean" class="lt.itmokymai.spring.ServiceC" parent="serviceABean">
+		
+	</bean>
+	
+	
+	
+	
+	<bean class="lt.itmokymai.spring.InitHelloWorld">
+	</bean>
+
+</beans>

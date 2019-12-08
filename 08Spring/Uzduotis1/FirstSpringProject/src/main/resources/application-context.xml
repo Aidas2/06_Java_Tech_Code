@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<context:annotation-config/>
+
+    <!-- Bean definitions goes there -->
+
+<!-- Uzduotis 1 (ir 3_02). Užregistruoti ServiceA bean application-context.xml byloje -->
+<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+	<property name="message" value="Uzduotis 1 (ir 3_02). ServiceA message (paduota per konstruktoriu 3_02)" />
+</bean>
+
+<!-- Uzduotis 2. Užregistruoti bean application-context.xml byloje -->
+<bean class="lt.itmokymai.spring.InitHelloWorld">
+</bean>
+
+<!-- Uzduotis 5.1 ServiceB naudoja ServiceA. Todėl pašalinkite xml konfigūracijoje nuorodas į ServiceA (tiek constructor-arg parametrus, tiek property) -->
+<!-- Uzduotis 5.2 Nurodykite xml konfigūracijoje ServiceB parametrą autowire.
+Pabandykite parinkti skirtingas reikšmes (byName, byType)
+-->	
+	<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="byType">
+	</bean>
+
+<!-- 8 pamoka. Uzduotis 1. xml faile galima sukurti daug produktu bean su ta pacia klase net ir be pavadinimo-->
+	<bean id="productList" class="lt.itmokymai.spring.ProductListClass">
+		<property name="productList">
+			<list>
+				<ref bean="Samsung1" />
+				<ref bean="Samsung2" />
+				<ref bean="Samsung3" />
+				<ref bean="Samsung4" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Samsung1" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 1" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc1" />
+		<property name="price" value="15.0" />
+		<property name="quantity" value="1" />
+	</bean>
+	
+	<bean id="Samsung2" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 2" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc2" />
+		<property name="price" value="16.0" />
+		<property name="quantity" value="25" />
+	</bean>
+	
+	<bean id="Samsung3" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 3" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc3" />
+		<property name="price" value="155.0" />
+		<property name="quantity" value="10" />
+	</bean>
+
+	<bean id="Samsung4" class="lt.itmokymai.spring.Product">
+		<property name="title" value="Samsung 4" />
+		<property name="image" value="/img/pav.jpg" />
+		<property name="description" value="Desc4" />
+		<property name="price" value="16.0" />
+		<property name="quantity" value="1222" />
+	</bean>
+
+</beans>

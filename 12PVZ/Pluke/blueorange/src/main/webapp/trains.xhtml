@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+	<ui:define name="context">
+	
+	<h:form>
+	<p:panel id="basic" header="Train" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+				
+					<h:outputLabel for="releaseDate" value="Train release date YYYY/MM/DD"></h:outputLabel>
+					<h:inputText id="releaseDate"
+						value="#{trainBean.newTrain.releaseDate}"
+						styleClass="#{trainBean.colorIn}"
+						onfocus="this.value=''"> 
+						<f:validateRegex pattern="^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$">
+						</f:validateRegex>
+						<f:passThroughAttribute name="placeholder" value="2001/12/17" onfocus="this.value=''" />
+					</h:inputText>
+					<p:message for="releaseDate" />
+
+					<h:outputLabel for="companyName" value="Made by:(Company Name)"></h:outputLabel>
+					<h:inputText id="companyName"
+						value="#{trainBean.newTrain.factory}"
+						styleClass="#{trainBean.colorIn}"
+						onfocus="this.value=''">
+						<f:validateLength minimum="3" maximum="20"/>
+							<f:validateRequired/>
+							<f:validateRegex pattern="^[a-zA-z]+$"></f:validateRegex>
+							<f:passThroughAttribute name="placeholder" value="Visma" onfocus="this.value=''" />
+						</h:inputText>
+					<p:message for="companyName" display="icon" />
+					
+					<h:outputLabel for="city" value="Made in:(City)"></h:outputLabel>
+					<h:inputText id="city"
+						value="#{trainBean.newTrain.city}"
+						styleClass="#{trainBean.colorIn}"
+						onfocus="this.value=''">
+						<f:validateLength minimum="3" maximum="20"/>
+							<f:validateRequired/>
+							<f:validateRegex pattern="^[a-zA-z]+$"></f:validateRegex>
+							<f:passThroughAttribute name="placeholder" value="Vilnius" onfocus="this.value=''" />
+							</h:inputText>
+					<p:message for="city" display="icon" /> 
+				</h:panelGrid>
+		</p:panel>
+		<p>
+			<h:commandButton action="#{trainBean.addNewTrain}" value="Save Train"
+				update="grid"></h:commandButton>
+		</p>
+		</h:form>
+		<p>	
+		<h:form>
+			<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
+
+			<p:dataTable value="#{trainRepo.findAllTrains()}" var="train">
+				<p:column headerText="Train Number">
+					<h:outputText value="#{train.trainNumber}" />
+				</p:column>
+				
+				<p:column headerText="Release Date">
+					<h:outputText value="#{train.releaseDate}" />
+				</p:column>
+
+				<p:column headerText="Made by (Company)">
+					<h:outputText value="#{train.factory}" />
+				</p:column>
+
+				<p:column headerText="Made in (City)">
+					<h:outputText value="#{train.city}" />
+				</p:column>
+
+				<p:column headerText="Action">
+				<h:commandButton value="Edit"
+						action="#{trainBean.editTrain(train)}" update="grid"/>
+				<h:commandButton value="Add van"
+						action="#{trainBean.showAddVanPage(train)}" update="grid"/>
+				
+				<h:commandButton value="Delete"
+						action="#{trainBean.deleteSelectedTrain(train.trainNumber)}" update="grid" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		</p>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Main</title>
+        <h:outputStylesheet name="styles.css"/>
+    </h:head>
+
+    <h:body>
+        <h:form id="tableActionForm">
+            <h:dataTable value="#{clientListBean.clientList}" var="client">
+                <h:column>
+                    <f:facet name="header">
+                        First Name
+                    </f:facet>
+                    <h:outputText value="#{client.firstName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Last Name
+                    </f:facet>
+                    <h:outputText value="#{client.lastName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Actions
+                    </f:facet>
+                    <h:commandLink actionListener="#{clientListBean.removeClient(client)}" value="Delete"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <h:form id="actionForm">
+            <h:commandButton id="addNewCustomerBtn" action="addNewCustomer" value="Add New Customer"/>
+        </h:form>
+
+    </h:body>
+</html>

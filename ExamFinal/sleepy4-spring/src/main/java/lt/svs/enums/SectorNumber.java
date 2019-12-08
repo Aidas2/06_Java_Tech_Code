@@ -1,0 +1,5 @@
+package lt.svs.enums;
+
+public enum SectorNumber {
+    SECTOR_01, SECTOR_02, SECTOR_03, SECTOR_04, SECTOR_05, SECTOR_06, SECTOR_07, SECTOR_08, SECTOR_09, SECTOR_10, SECTOR_11, SECTOR_12
+}

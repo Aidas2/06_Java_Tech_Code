@@ -1,0 +1,36 @@
+ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: darkblue;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+  }
+  
+li {
+    display: inline;
+    margin-right: 30px;
+}
+
+a {
+  color: white;
+  font-size: 20px;
+}
+
+.myborders {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+}
+
+.myfooter {
+  text-align: center;
+  position: sticky;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: darkblue;
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+}

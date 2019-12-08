@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faces-config version="2.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.
+com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+		 
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver
+		</el-resolver>
+	</application>
+		<navigation-rule>
+		<from-view-id>/authors.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-add-book</from-outcome>
+			<to-view-id>/addBook.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list-authors</from-outcome>
+			<to-view-id>/authors.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>list-authors</from-outcome>
+			<to-view-id>authors.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/addBook.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list-authors</from-outcome>
+			<to-view-id>/authors.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>search-tags</from-outcome>
+			<to-view-id>/tags.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>search-books</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list-books</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

@@ -1,0 +1,45 @@
+jonasnamai@jonasnamai-VirtualBox:~/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc$ mvn clean verify
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Boot Blank Project (from https://github.com/making/spring-boot-blank) 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ hello-world-calc ---
+[INFO] Deleting /home/jonasnamai/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ hello-world-calc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ hello-world-calc ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 12 source files to /home/jonasnamai/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ hello-world-calc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ hello-world-calc ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ hello-world-calc ---
+[INFO] 
+[INFO] --- maven-war-plugin:3.1.0:war (default-war) @ hello-world-calc ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [hello-world-calc] in [/home/jonasnamai/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc/target/hello-world-calc-1.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Webapp assembled in [225 msecs]
+[INFO] Building war: /home/jonasnamai/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc/target/hello-world-calc-1.0-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.0.6.RELEASE:repackage (default) @ hello-world-calc ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.21.0:integration-test (default) @ hello-world-calc ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.21.0:verify (default) @ hello-world-calc ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+jonasnamai@jonasnamai-VirtualBox:~/JavaTechnologijos2/pamoka_08/Uzduotis_05_03(testai)/hello-world-calc$ 
+

@@ -1,0 +1,2 @@
+Čia yra pašalintos visos klasės, kurios nebereikalingos.
+Jos buvo naudotos iki Spring Data įdiegimo.

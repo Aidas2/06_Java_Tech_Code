@@ -1,0 +1,68 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="layout.xhtml">
+
+	<ui:define name="title">
+        All data
+    </ui:define>
+    
+    <ui:define name="content">
+    <br/>
+		<h:form id="dataTable">
+			<p:growl id="growl" sticky="true" />
+			<p:remoteCommand name="onload"
+				action="#{surveyListBean.updateGrowl()}" autoRun="true"
+				update="growl" />
+			<p:dataTable value="#{surveyListBean.getAllSurvey()}" var="survey">
+				<f:facet name="header">All surveys data:</f:facet>
+				<p:column headerText="Survey ID">
+					<h:outputText value="#{survey.id}" />
+				</p:column>
+				
+				<p:column headerText="Survey date">
+					<h:outputText value="#{survey.surveyDate}" />
+				</p:column>
+
+				<p:column headerText="Customer phone:">
+					<h:outputText value="#{survey.client.phoneNumber}" />
+				</p:column>
+				
+				<p:column headerText="Customer first name:">
+					<h:outputText value="#{survey.client.firstName}" />
+				</p:column>
+				
+				<p:column headerText="Customer last name:">
+					<h:outputText value="#{survey.client.lastName}" />
+				</p:column>
+
+				<p:column headerText="Question">
+					<h:outputText value="#{survey.question}" />
+				</p:column>
+				<p:column headerText="Answer (value)">
+					<h:outputText value="#{survey.value}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		<br/>
+		<h:form id="average">
+			<p:panelGrid columns="2">
+				<f:facet name="header">Average value of answers:</f:facet>
+				<h:outputText value="How do you like our service?" />
+				<h:outputText value="#{surveyListBean.findAverageAnswer()}" />
+			</p:panelGrid>
+		</h:form>
+		
+		<br/>
+		<h:form id="barChart">
+		<p:chart type="bar" model="#{clientListBean.barModel}" style="height:300px"/>
+		</h:form>
+		
+	</ui:define>
+	<br/>
+	
+	<ui:define name="footer">
+		<ui:include src="footer.xhtml" />
+	</ui:define>
+</ui:composition>

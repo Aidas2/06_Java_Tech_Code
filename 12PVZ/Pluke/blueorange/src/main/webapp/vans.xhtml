@@ -1,0 +1,109 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+	<ui:define name="context">
+		<h:form>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				closable="true" />
+				
+			<p:panel id="basic" header="Vans details" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+				
+					<h:outputLabel for="vanType" value="Van Type"></h:outputLabel>
+					<h:inputText id="vanType" value="#{vanBean.newVan.vanType}"
+					styleClass="#{vanBean.colorIn}">
+						<f:validateRequired/>
+							<f:validateRegex pattern="^[a-zA-z]+$"></f:validateRegex>
+						<f:passThroughAttribute name="placeholder" value="Passenger van" onfocus="this.value=''" />
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="vanType" />
+					
+					<h:outputLabel for="factory" value="Van made by (Company)"></h:outputLabel>
+					<h:inputText id="factory" value="#{vanBean.newVan.factory}"
+					styleClass="#{vanBean.colorIn}">
+						<f:validateRequired/>
+							<f:validateRegex pattern="^[a-zA-z]+$"></f:validateRegex>
+						<f:passThroughAttribute name="placeholder" value="EisGroup" onfocus="this.value=''" />
+						<f:validateBean />
+						</h:inputText>
+					<p:message for="factory" />
+					
+					<h:outputLabel for="quantity" value="How many vans?"></h:outputLabel>
+					<h:inputText id="quantity" value="#{vanBean.newVan.quantity}"
+					styleClass="#{vanBean.colorIn}">
+						<f:validateRequired/>
+						<f:validateLongRange minimum="1" maximum="100"></f:validateLongRange>
+						<f:passThroughAttribute name="placeholder" value="2" onfocus="this.value=''" />
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="quantity" />
+					
+					<h:outputLabel for="price" value="Price of one van"></h:outputLabel>
+					<h:inputText id="price" value="#{vanBean.newVan.price}"
+					styleClass="#{vanBean.colorIn}">
+						<f:validateRequired/>
+						<f:validateDoubleRange minimum="0.1" maximum="10000.99"></f:validateDoubleRange>
+						<f:passThroughAttribute name="placeholder" value="20.99" onfocus="this.value=''" />
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="price" />
+				</h:panelGrid>
+
+				<h:commandButton action="#{vanBean.addOrUpdateVan}" value="Add Van to your train" update="grid" />
+			</p:panel>
+		</h:form>
+
+	<p>
+		<h:form>
+			<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
+			<p> Train Nr.:
+				<h:outputText value="#{vanBean.currentTrain.trainNumber}" styleClass="#{vanBean.colorOut}"/>
+				
+				Train release date:
+				<h:outputText value="#{vanBean.currentTrain.releaseDate}" styleClass="#{vanBean.colorOut}" />
+				
+			</p>
+
+			<p:dataTable value="#{vanBean.getTrainVans()}" var="van">
+				<p:column headerText="Vans Nr">
+					<h:outputText value="#{van.vanId}" />
+				</p:column>
+				
+				<p:column headerText="Vans Type">
+					<h:outputText value="#{van.vanType}" />
+				</p:column>
+
+				<p:column headerText="Made by (company)">
+					<h:outputText value="#{van.factory}" />
+				</p:column>
+
+				<p:column headerText="Vans quantity">
+					<h:outputText value="#{van.quantity}" />
+				</p:column>
+				
+				<p:column headerText="Price per van">
+					<h:outputText value="#{van.price}" />
+				</p:column>
+				
+				<p:column headerText="Total Price">
+					<h:outputText value="#{van.finalPrice}" />
+				</p:column>
+
+				<p:column headerText="Action">
+					<h:commandButton value="Edit "
+						action="#{vanBean.editVan(van)}" update="grid" />
+				
+					<h:commandButton value="Delete "
+						action="#{vanBean.deleteSelectedVan(van.vanId)}" update="grid" />
+					
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		</p>
+	</ui:define>
+</ui:composition>

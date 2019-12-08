@@ -1,0 +1,54 @@
+1. I package.json faila irasyta eilute "homepage": "./"
+As ja irasiau i pati gala ir json failas atorodo taip:
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "private": true,
+    "dependencies": {
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-scripts": "2.1.1",
+    "bootstrap": "4.1.3",
+    "jquery": "1.9.1",
+    "popper.js": "1.14.3",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "axios" : "0.18.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "homepage": "./"
+}
+
+2. Tada padariau npm install.
+3. Tada padariau npm run build.
+4. Tada sping boot projekte src/main/resources direktorijoje templates direktorija pervardinau i public.
+5. Tada viska cia istryniau.
+6. Tada is React build direktorijos viska atkopijavau cia.
+7. Pakoregavau HelloController.java faila - uzkomentavau hello() metoda.
+8. Istryniau HelloControllerTest.java faila.
+9. Mano spring boot projektas yra hello-world-calc. Sioje direktorijoje esanti pom.xml faila pakoregavau - cia jau buvo skyrius <build> todel jo viduje paraciau:
+	<configuration>
+	    <addResources>true</addResources>
+	</configuration>
+Nes kitas kodas skaidreje jau buvo ir pom faile.
+10. Tada padariau mvn install. Viskas successful.
+11. Tada komanda mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8081'
+12. Atsidariau narsykle, suvedziau adresa http://localhost:8081/ -> rodo balta lapa.
+
+Ka padariau netinkamai?
+
+

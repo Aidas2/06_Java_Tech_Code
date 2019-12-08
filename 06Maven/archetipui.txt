@@ -1,0 +1,63 @@
+//06_03 (27 skaidre) Maven instaliavimas
+sudo apt-get install maven
+mvn -version
+Apache Maven 3.5.2
+
+//06_04 (45 skaidre).Archetipas SecondMavenProject (quickstart)
+mvn archetype:generate -DgroupId=lt.mokymai \
+-DartifactId=SecondMavenProject -Dpackage=lt.mokymai.maven \
+-Dversion=1.0-SNAPSHOT \
+-DarchetypeArtifactId=maven-archetype-quickstart
+
+//06_4 (45).Archetipas ThirdMavenProject (quickstart)
+mvn archetype:generate -DgroupId=lt.mokymai \
+-DartifactId=ThirdMavenProject -Dpackage=lt.mokymai.maven \
+-Dversion=1.0-SNAPSHOT \
+-DarchetypeArtifactId=maven-archetype-quickstart
+
+mvn eclipse:eclipse
+mvn clean compile
+mvn clean test
+mvn clean package
+mvn clean install
+mvn exec:java -Dexec.mainClass="lt.mokymai.maven.App"
+
+
+//06 pamoka. 07 uzduotis (93 skaidre) Spring boot archetipui
+mvn archetype:generate -DgroupId=it.akademija \
+-DartifactId=hello-world-calc \
+-DarchetypeGroupId=am.ik.archetype \
+-DarchetypeArtifactId=spring-boot-blank-archetype \
+-DarchetypeVersion=1.0.6 -DinteractiveMode=false
+
+//06 pamoka. 07 uzduotis (94 skaidre) visiems pom.xml
+<properties>
+<!-- Kodas užkoduotas universalia koduote UTF-8 -->
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+<!-- Kodas skirtas Java 8 -->
+<java.version>1.8</java.version>
+<maven.compiler.source>1.8</maven.compiler.source>
+<maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+mvn eclipse:eclipse
+mvn clean install
+mvn clean test
+//06 pamoka. 07 uzduotis (96 skaidre)
+mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8081'
+http://localhost:8081/calc?le =1&right=2
+//06 pamoka. 07 uzduotis (99 skaidre)
+mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war \
+-Dmaven.tomcat.port=8081
+http://localhost:8081/hello-world-calc/calc?le =1&right=2
+
+
+
+//java parinkimas mavenui:
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export PATH=$JAVA_HOME/bin:$PATH
+//arba
+export JAVA_HOME=/usr/lib/jvm/java-10-oracle
+//java parinkimas ubuntu sistemai:
+sudo update-alternatives --config java

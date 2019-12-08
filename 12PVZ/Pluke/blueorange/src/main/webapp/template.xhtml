@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Invoice Page - <ui:insert name="pavadinimas">
+  		Invoice System
+  	</ui:insert>
+	</title>
+	<h:outputStylesheet name="styles.css"></h:outputStylesheet>
+</h:head>
+<h:body>
+	<div id="container">
+		<h:form>
+			<p:tabMenu>
+				<p:menuitem value="Trains" outcome="list-trains"
+					icon="ui-icon-suitcase" update="grid">
+				</p:menuitem>
+				<p:menuitem value="Train vans" icon="ui-icon-star">
+				</p:menuitem>
+			</p:tabMenu>
+		</h:form>
+		<div>
+		<h3>Time for making a train</h3>
+		<h:form>
+   	 	<h3 style="margin-top:0">Client</h3>
+    	<p:clock />
+ 
+    	<h3>Server time</h3>
+    	<p:clock pattern="HH:mm:ss dd.MM.yyyy" mode="server" />
+		</h:form>
+		</div>
+		
+		<div id="contents">
+			<ui:insert name="context">
+		  		No Context
+		  	</ui:insert>
+		</div>
+	</div>
+	<ui:insert name="myFooter">
+		<ui:include src="footer.xhtml" />
+	</ui:insert>
+</h:body>
+</html>

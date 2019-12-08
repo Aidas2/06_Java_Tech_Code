@@ -1,0 +1,5 @@
+.horizontal * {
+    display: inline-block;
+    margin: 5%;
+    width: 20%;
+}

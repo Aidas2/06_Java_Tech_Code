@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ 
+    <property name="LOGS" value="./logs" />
+    <property name="BASEPCKG" value="lt.akademijait.warehouse" />
+ 
+    <appender name="Console"
+        class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d %p %C{1.} [%t] %m%n
+            </Pattern>
+        </layout>
+    </appender>
+ 
+    <appender name="LOGFILE"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/log_file.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{"yyyy-MM-dd HH:mm:ss"} %p %C{1.} [%t] --- %m%n</Pattern>
+        </encoder>
+ 
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${LOGS}/archived/log_file-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{"yyyy-MM-dd HH:mm:ss"} %p %C{1.} [%t] --- %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="${BASEPCKG}.customer.service.CustomerService" level="info" additivity="false">
+        <appender-ref ref="LOGFILE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <logger name="${BASEPCKG}.inventory.service.InventoryService" level="info" additivity="false">
+        <appender-ref ref="LOGFILE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <logger name="${BASEPCKG}.security.controller.AuthController" level="info" additivity="false">
+        <appender-ref ref="LOGFILE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <logger name="${BASEPCKG}.CommandLineAppStartupRunner" level="info" additivity="false">
+        <appender-ref ref="LOGFILE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+ 
+</configuration>

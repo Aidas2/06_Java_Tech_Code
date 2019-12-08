@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>lt.akademija</groupId>
+	<artifactId>blueOrange-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>${project.artifactId}</name>
+	<description>A simple project with war packaging that depends on JSF 2.2 and 
+        javaee 6, in that order.</description>
+	<url>http://jsf-spec.java.net/</url>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<path>/BlueOrange-app</path>
+					<contextReloadable>true</contextReloadable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<spec.snapshot.version>2.2</spec.snapshot.version>
+		<maven.tomcat.contextReloadable>true</maven.tomcat.contextReloadable>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.190</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>${spec.snapshot.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.2.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.2.3.RELEASE</version>
+		</dependency>
+
+		<!-- - JPA, testing, logging -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>5.0.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.12.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.0.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+
+		<!-- spring data -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.9.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.2.Final</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>java.net-maven2-SNAPSHOT-repository</id>
+			<name>Java.net SNAPSHOT-Repository for Maven</name>
+			<url>https://maven.java.net/content/repositories/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>java.net-maven2-repository</id>
+			<name>Java.net Repository for Maven</name>
+			<url>https://maven.java.net/content/repositories/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>pf-themes</id>
+			<name>Primefaces themes</name>
+			<url>http://repository.primefaces.org/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+</project>

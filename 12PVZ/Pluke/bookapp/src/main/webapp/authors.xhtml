@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="sablonas.xhtml">
+
+	<ui:define name="turinys">
+		<h:form>
+			
+			<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
+
+			<p:dataTable value="#{authorListPage.authorList}" var="author">
+				<p:column headerText="Id">
+					<h:outputText value="#{author.id}" />
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{author.name}" />
+				</p:column>
+
+				<p:column headerText="Lastname">
+					<h:outputText value="#{author.lastname}" />
+				</p:column>
+
+				<p:column headerText="Books">
+					<h:dataTable value="#{author.books}" var="book" border="0">
+						<h:column>
+		  						#{book.title} (#{bookList.convertGenreListToGenreString(book.genres)}) (#{book.releaseDate})
+	  					</h:column>
+					</h:dataTable>
+				</p:column>
+				<p:column headerText="Tags">
+					<h:outputText
+						value="#{authorListPage.convertTagListToTagString(author.tags)}" />
+				</p:column>
+
+				<p:column headerText="">
+					<h:commandButton value="Delete"
+						action="#{authorListPage.deleteSelected(author)}" />
+					<h:commandButton value="Add Book"
+						action="#{authorListPage.showAddBookPage(author)}" />
+				</p:column>
+			</p:dataTable>
+
+
+		</h:form>
+		<h:form>
+			<p:panel id="basic" header="Author" style="margin-bottom:20px">
+				<h:panelGrid id="grid" columns="3" cellpadding="5">
+					<h:outputLabel for="author_name" value="Author name"></h:outputLabel>
+					<h:inputText id="author_name"
+						value="#{authorListPageData.newAuthor.name}">
+						<f:validateBean />
+					</h:inputText>
+					<p:message for="author_name" />
+
+					<h:outputLabel for="author_lastname" value="Author lastname"></h:outputLabel>
+					<h:inputText id="author_lastname"
+						value="#{authorListPageData.newAuthor.lastname}"></h:inputText>
+					<p:message for="author_lastname" display="icon" />
+					<h:outputLabel for="tags" value="Author tags"></h:outputLabel>
+					<h:inputText id="tags" value="#{authorListPageData.tags}"></h:inputText>
+					<p:message for="tags" display="icon" />
+				</h:panelGrid>
+
+			</p:panel>
+
+			<h:commandButton action="#{authorListPage.addNew}" value="Add new"
+				update="grid"></h:commandButton>
+		</h:form>
+
+	</ui:define>
+
+	<ui:define name="pavadinimas">
+ 	 	Add new book
+ 	 </ui:define>
+
+</ui:composition>

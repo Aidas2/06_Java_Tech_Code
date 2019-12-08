@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="anoproc" class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="bookReviewDb" />
+	</bean>
+	
+	<bean id="authorRepo" class="itakademija.java2015.jpa.assigment1.entities.repositories.jpa.AuthorDaoImpl" scope="singleton">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<bean id="bookRepo" class="itakademija.java2015.jpa.assigment1.entities.repositories.jpa.BookRepositoryJPA" scope="singleton">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<bean id="bookListPageData" class="itakademija.java2015.ui.controllers.BookListBean.BookListPageData" scope="session" init-method="init" />
+	<bean id="bookList" class="itakademija.java2015.ui.controllers.BookListBean" scope="request" >
+		<property name="data" ref="bookListPageData" />
+		<property name="bookRepo" ref="bookRepo" />
+	</bean>
+	
+	<bean id="authorListPageData" class="itakademija.java2015.ui.controllers.AuthorsListPageBean.AuthorsListPageData" scope="session" init-method="init" />
+	<bean id="authorListPage" class="itakademija.java2015.ui.controllers.AuthorsListPageBean" scope="request" >
+		<property name="data" ref="authorListPageData" />
+		<property name="authorRepo" ref="authorRepo" />
+	</bean>
+	
+	<bean id="newBook" class="itakademija.java2015.jpa.assigment1.entities.Book" scope="session"></bean>
+
+	<bean id="addBookPage"
+		class="itakademija.java2015.ui.controllers.AddNewBookPageBean"
+		scope="request" init-method="init" lazy-init="false">
+		<property name="authorRepo" ref="authorRepo" />
+		<property name="bookRepo" ref="bookRepo" />
+		<property name="newBook" ref="newBook"/>
+		<property name="authorsListPageBean" ref="authorListPage" />
+	</bean>
+
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Bean definitions goes there -->
+
+<!-- Uzduotis 1. Užregistruoti ServiceA bean application-context.xml byloje -->
+<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+<property name="message" value="Uzduotis 1. ServiceA message" />
+</bean>
+
+<!-- Uzduotis 2. Užregistruoti bean application-context.xml byloje -->
+<bean class="lt.itmokymai.spring.InitHelloWorld">
+</bean>
+
+<!-- Uzduotis 3.01 Užregistruoti ServiceB bean application-context.xml byloje -->
+<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">
+<property name="serviceA" ref="serviceABean" />
+</bean>
+
+
+</beans>
+

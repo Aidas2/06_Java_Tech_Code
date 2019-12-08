@@ -1,0 +1,3 @@
+Čia yra perdaryta, kad produktą kurtu be id padavimo.
+Ir CascadeType.ALL yra.
+Tą patį pernešiu tik į projektą Uzduotis_01_02c.

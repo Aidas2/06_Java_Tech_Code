@@ -1,0 +1,41 @@
+#discount {
+    background-image: url('discount.png');
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    width: auto;
+    height: 100px;
+}
+
+table {
+    font-size: small;
+    table-layout: fixed;
+}
+
+#menu {
+    width: 100%;
+}
+
+#leftside {
+    display: inline-block;
+    width: 25%;
+    float: left;
+}
+
+#rightside {
+    display: inline-block;
+    max-width: 74%;
+    float: right;
+}
+
+div#layout {
+    padding: 3px;
+    overflow: auto;
+}
+
+.ui-panelgrid {
+    width: 100% !important;
+}
+
+#chart1 {
+    height: 300px;
+}

@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="layout.xhtml">
+
+	<h:head>
+		<title>Call Center</title>
+		<h:outputStylesheet name="styles.css" />
+	</h:head>
+
+	<ui:define name="content">
+	<br/>
+		<h:form id="dataTable">
+			<p:growl id="growl" sticky="true" />
+			<p:remoteCommand name="onload"
+				action="#{clientListBean.updateGrowl()}" autoRun="true"
+				update="growl" />
+			<p:dataTable value="#{clientListBean.clientList}" var="client">
+				<f:facet name="header">Registered Customers</f:facet>
+				<p:column headerText="First name">
+					<h:outputText value="#{client.firstName}" />
+				</p:column>
+				<p:column headerText="Last Name">
+					<h:outputText value="#{client.lastName}" />
+				</p:column>
+				<p:column headerText="City">
+					<h:outputText value="#{client.city}" />
+				</p:column>
+
+				<p:column headerText="">
+					<p:commandButton value="Add Survey"
+						action="#{newClientBean.open(client)}">
+					</p:commandButton>
+				</p:column>
+				<p:column headerText="">
+					<h:commandLink actionListener="#{clientListBean.removeClient(client)}" value="Delete"/>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		<br/>
+
+		<h:form id="actionForm">
+			<h:commandButton id="addNewCustomerBtn" action="addNewCustomer"
+				value="Add New Customer" />
+		</h:form>
+		
+		<br/>
+		<h:form id="dataForm">
+			<h:commandButton id="datViewBtn" action="dataView"
+				value="All surveys data" />
+		</h:form>
+
+
+	</ui:define>
+
+	<ui:define name="footer">
+		<ui:include src="footer.xhtml" />
+	</ui:define>
+
+</ui:composition>

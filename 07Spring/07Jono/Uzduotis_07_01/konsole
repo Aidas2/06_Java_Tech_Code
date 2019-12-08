@@ -1,0 +1,318 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Spring Boot Blank Project (from https://github.com/making/spring-boot-blank) 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> tomcat7-maven-plugin:2.2:run-war (default-cli) > package @ hello-world-calc >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hello-world-calc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hello-world-calc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hello-world-calc ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hello-world-calc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ hello-world-calc ---
+[INFO] Surefire report directory: /home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running it.akademija.HelloControllerTest
+15:09:06.695 [main] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class it.akademija.HelloControllerTest]
+15:09:06.731 [main] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.test.context.web.WebTestContextBootstrapper]
+15:09:06.793 [main] DEBUG o.s.t.c.w.WebTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@56ef9176 declaringClass = 'it.akademija.HelloControllerTest', classes = '{class it.akademija.App}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+15:09:06.812 [main] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [it.akademija.HelloControllerTest]
+15:09:06.834 [main] INFO  o.s.t.c.w.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.boot.test.IntegrationTestPropertiesListener@2b9627bc, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@65e2dbf3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f970963, org.springframework.test.context.transaction.TransactionalTestExecutionListener@61f8bee4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7b49cea0]
+15:09:06.839 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [it.akademija.HelloControllerTest]
+15:09:06.840 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.akademija.HelloControllerTest]
+15:09:06.843 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [it.akademija.HelloControllerTest]
+15:09:06.843 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.akademija.HelloControllerTest]
+15:09:06.849 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [it.akademija.HelloControllerTest]
+15:09:06.850 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [it.akademija.HelloControllerTest]
+15:09:06.853 [main] DEBUG o.s.test.util.ReflectionTestUtils - Getting field [mergedContextConfiguration] from target [[DefaultTestContext@22a67b4 testClass = HelloControllerTest, testInstance = it.akademija.HelloControllerTest@57855c9a, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3b084709 testClass = HelloControllerTest, locations = '{}', classes = '{class it.akademija.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]]
+15:09:06.857 [main] DEBUG o.s.test.util.ReflectionTestUtils - Setting field [propertySourceProperties] of type [null] on target [[WebMergedContextConfiguration@3b084709 testClass = HelloControllerTest, locations = '{}', classes = '{class it.akademija.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]] to value [[Ljava.lang.String;@72b6cbcc]
+15:09:06.858 [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@22a67b4 testClass = HelloControllerTest, testInstance = it.akademija.HelloControllerTest@57855c9a, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3b084709 testClass = HelloControllerTest, locations = '{}', classes = '{class it.akademija.App}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{server.port:0, spring.datasource.url:jdbc:h2:mem:hello-world-calc;DB_CLOSE_ON_EXIT=FALSE, org.springframework.boot.test.IntegrationTest=true}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+15:09:07.054 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+15:09:07.059 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+15:09:07.068 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+15:09:07.069 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+2018-11-30 15:09:07.480  INFO 14814 --- [           main] it.akademija.HelloControllerTest         : Starting HelloControllerTest on jonasnamai-VirtualBox with PID 14814 (/home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/test-classes started by jonasnamai in /home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc)
+2018-11-30 15:09:07.853  INFO 14814 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@670002: startup date [Fri Nov 30 15:09:07 EET 2018]; root of context hierarchy
+2018-11-30 15:09:08.647  INFO 14814 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2018-11-30 15:09:09.388  INFO 14814 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ab06c136] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:09.429  INFO 14814 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:09.462  INFO 14814 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:09.491  INFO 14814 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:10.157  INFO 14814 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 0 (http)
+2018-11-30 15:09:10.780  INFO 14814 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2018-11-30 15:09:10.796  INFO 14814 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.28
+2018-11-30 15:09:11.030  INFO 14814 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-11-30 15:09:11.031  INFO 14814 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3184 ms
+2018-11-30 15:09:12.123  INFO 14814 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2018-11-30 15:09:12.131  INFO 14814 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-30 15:09:12.131  INFO 14814 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-30 15:09:12.922  INFO 14814 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@670002: startup date [Fri Nov 30 15:09:07 EET 2018]; root of context hierarchy
+2018-11-30 15:09:13.004  INFO 14814 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/calc]}" onto it.akademija.HelloController$Result it.akademija.HelloController.calc(int,int)
+2018-11-30 15:09:13.005  INFO 14814 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String it.akademija.HelloController.hello()
+2018-11-30 15:09:13.007  INFO 14814 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2018-11-30 15:09:13.009  INFO 14814 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-30 15:09:13.074  INFO 14814 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:13.075  INFO 14814 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:13.197  INFO 14814 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:13.400  INFO 14814 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 41971 (http)
+2018-11-30 15:09:13.403  INFO 14814 --- [           main] it.akademija.HelloControllerTest         : Started HelloControllerTest in 6.323 seconds (JVM running for 7.85)
+2018-11-30 15:09:15.618  INFO 14814 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-11-30 15:09:15.619  INFO 14814 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-11-30 15:09:15.642  INFO 14814 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-11-30 15:09:16.483 DEBUG 14814 --- [o-auto-1-exec-2] jdbc.sqltiming                           :  org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:703)
+1. SELECT 100 + 200 AS answer
+ {executed in 12 msec}
+2018-11-30 15:09:16.519  INFO 14814 --- [o-auto-1-exec-2] jdbc.resultsettable                      : 
+|-------|
+|answer |
+|-------|
+|300    |
+|-------|
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.588 sec - in it.akademija.HelloControllerTest
+2018-11-30 15:09:17.531  INFO 14814 --- [       Thread-1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@670002: startup date [Fri Nov 30 15:09:07 EET 2018]; root of context hierarchy
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.5:war (default-war) @ hello-world-calc ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [hello-world-calc] in [/home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/hello-world-calc-1.0-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Webapp assembled in [209 msecs]
+[INFO] Building war: /home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/hello-world-calc-1.0-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.7.RELEASE:repackage (default) @ hello-world-calc ---
+[INFO] 
+[INFO] <<< tomcat7-maven-plugin:2.2:run-war (default-cli) < package @ hello-world-calc <<<
+[INFO] 
+[INFO] 
+[INFO] --- tomcat7-maven-plugin:2.2:run-war (default-cli) @ hello-world-calc ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.pom (1.9 kB at 2.0 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/7.0.47/tomcat-util-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/7.0.47/tomcat-util-7.0.47.pom (1.8 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/7.0.47/tomcat-juli-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/7.0.47/tomcat-juli-7.0.47.pom (1.3 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/7.0.47/tomcat-api-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/7.0.47/tomcat-api-7.0.47.pom (1.6 kB at 23 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/7.0.47/tomcat-servlet-api-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/7.0.47/tomcat-servlet-api-7.0.47.pom (1.9 kB at 24 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-coyote/7.0.47/tomcat-coyote-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-coyote/7.0.47/tomcat-coyote-7.0.47.pom (1.9 kB at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jdbc/7.0.47/tomcat-jdbc-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jdbc/7.0.47/tomcat-jdbc-7.0.47.pom (1.5 kB at 21 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-dbcp/7.0.47/tomcat-dbcp-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-dbcp/7.0.47/tomcat-dbcp-7.0.47.pom (1.3 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/7.0.47/tomcat-jsp-api-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/7.0.47/tomcat-jsp-api-7.0.47.pom (2.1 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/7.0.47/tomcat-el-api-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/7.0.47/tomcat-el-api-7.0.47.pom (1.3 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/7.0.47/tomcat-jasper-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/7.0.47/tomcat-jasper-7.0.47.pom (2.8 kB at 35 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.pom (1.5 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/7.0.47/tomcat-jasper-el-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/7.0.47/tomcat-jasper-el-7.0.47.pom (1.6 kB at 20 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/7.0.47/tomcat-catalina-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/7.0.47/tomcat-catalina-7.0.47.pom (2.4 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/7.0.47/tomcat-annotations-api-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/7.0.47/tomcat-annotations-api-7.0.47.pom (1.3 kB at 15 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-tribes/7.0.47/tomcat-tribes-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-tribes/7.0.47/tomcat-tribes-7.0.47.pom (1.6 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina-ha/7.0.47/tomcat-catalina-ha-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina-ha/7.0.47/tomcat-catalina-ha-7.0.47.pom (2.5 kB at 35 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.pom (1.4 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-log4j/7.0.47/tomcat-embed-logging-log4j-7.0.47.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-log4j/7.0.47/tomcat-embed-logging-log4j-7.0.47.pom (1.4 kB at 18 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/common-tomcat-maven-plugin/2.2/common-tomcat-maven-plugin-2.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/common-tomcat-maven-plugin/2.2/common-tomcat-maven-plugin-2.2.pom (4.3 kB at 60 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.1/plexus-archiver-2.1.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.1/plexus-archiver-2.1.1.pom (2.8 kB at 40 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.3/plexus-io-2.0.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.3/plexus-io-2.0.3.pom (1.7 kB at 26 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.pom (5.2 kB at 68 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.3.1/httpcomponents-client-4.3.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.3.1/httpcomponents-client-4.3.1.pom (15 kB at 153 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.pom (4.1 kB at 56 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.3/httpcomponents-core-4.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.3/httpcomponents-core-4.3.pom (12 kB at 149 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom (18 kB at 262 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom (17 kB at 221 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/17/commons-parent-17.pom (31 kB at 400 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/tomcat7-war-runner/2.2/tomcat7-war-runner-2.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/tomcat7-war-runner/2.2/tomcat7-war-runner-2.2.pom (3.6 kB at 53 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.pom (11 kB at 156 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.0/xz-1.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.0/xz-1.0.pom (1.9 kB at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.pom (5.8 kB at 84 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.pom (1.9 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/7.0.47/tomcat-util-7.0.47.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-coyote/7.0.47/tomcat-coyote-7.0.47.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/7.0.47/tomcat-api-7.0.47.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jdbc/7.0.47/tomcat-jdbc-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/7.0.47/tomcat-util-7.0.47.jar (24 kB at 90 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-dbcp/7.0.47/tomcat-dbcp-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-api/7.0.47/tomcat-api-7.0.47.jar (7.0 kB at 24 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/7.0.47/tomcat-servlet-api-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/7.0.47/tomcat-servlet-api-7.0.47.jar (178 kB at 360 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/7.0.47/tomcat-jsp-api-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-dbcp/7.0.47/tomcat-dbcp-7.0.47.jar (235 kB at 474 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/7.0.47/tomcat-jasper-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jsp-api/7.0.47/tomcat-jsp-api-7.0.47.jar (89 kB at 124 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/7.0.47/tomcat-jasper-el-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jdbc/7.0.47/tomcat-jdbc-7.0.47.jar (125 kB at 161 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/7.0.47/tomcat-el-api-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper-el/7.0.47/tomcat-jasper-el-7.0.47.jar (123 kB at 135 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/7.0.47/tomcat-catalina-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-el-api/7.0.47/tomcat-el-api-7.0.47.jar (45 kB at 49 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-tribes/7.0.47/tomcat-tribes-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-jasper/7.0.47/tomcat-jasper-7.0.47.jar (600 kB at 639 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina-ha/7.0.47/tomcat-catalina-ha-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina-ha/7.0.47/tomcat-catalina-ha-7.0.47.jar (135 kB at 121 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/7.0.47/tomcat-annotations-api-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/7.0.47/tomcat-annotations-api-7.0.47.jar (16 kB at 13 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/7.0.47/tomcat-juli-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-coyote/7.0.47/tomcat-coyote-7.0.47.jar (833 kB at 688 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.47/tomcat-embed-logging-juli-7.0.47.jar (39 kB at 29 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-log4j/7.0.47/tomcat-embed-logging-log4j-7.0.47.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-tribes/7.0.47/tomcat-tribes-7.0.47.jar (258 kB at 189 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/7.0.47/tomcat-juli-7.0.47.jar (39 kB at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/common-tomcat-maven-plugin/2.2/common-tomcat-maven-plugin-2.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-logging-log4j/7.0.47/tomcat-embed-logging-log4j-7.0.47.jar (84 kB at 57 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/common-tomcat-maven-plugin/2.2/common-tomcat-maven-plugin-2.2.jar (38 kB at 25 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/7.0.47/tomcat-catalina-7.0.47.jar (1.6 MB at 815 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/7.0.47/tomcat-embed-core-7.0.47.jar (2.8 MB at 1.4 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar (586 kB at 293 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/tomcat7-war-runner/2.2/tomcat7-war-runner-2.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/maven/tomcat7-war-runner/2.2/tomcat7-war-runner-2.2.jar (25 kB at 12 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar (62 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar (284 kB at 124 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.0/xz-1.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar (282 kB at 120 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.1/plexus-archiver-2.1.1.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar (241 kB at 102 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.3/plexus-io-2.0.3.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.0/xz-1.0.jar (95 kB at 40 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.0/maven-filtering-1.0.jar (43 kB at 17 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.3/plexus-io-2.0.3.jar (58 kB at 24 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.5/jcl-over-slf4j-1.7.5.jar (17 kB at 6.4 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1.1/plexus-archiver-2.1.1.jar (185 kB at 72 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jdt/core/compiler/ecj/4.2.2/ecj-4.2.2.jar (1.8 MB at 662 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/10.0.1/guava-10.0.1.jar (1.5 MB at 474 kB/s)
+[INFO] Running war on http://localhost:8081/hello-world-calc
+[INFO] Creating Tomcat server configuration at /home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/tomcat
+[INFO] create webapp with contextPath: /hello-world-calc
+Nov 30, 2018 3:09:30 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8081"]
+Nov 30, 2018 3:09:30 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Tomcat
+Nov 30, 2018 3:09:30 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.47
+Nov 30, 2018 3:09:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Spring WebApplicationInitializers detected on classpath: [org.springframework.boot.autoconfigure.jersey.JerseyAutoConfiguration@5abc7b39, it.akademija.App@5122bd42]
+2018-11-30 15:09:35.207  INFO 14773 --- [ost-startStop-1] it.akademija.App                         : Starting App on jonasnamai-VirtualBox with PID 14773 (/home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc/target/hello-world-calc-1.0-SNAPSHOT/WEB-INF/classes/it/akademija/App.class started by jonasnamai in /home/jonasnamai/JavaTecnologijos/pamoka_06/Uzduotis_07/hello-world-calc)
+2018-11-30 15:09:35.249  INFO 14773 --- [ost-startStop-1] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5e056def: startup date [Fri Nov 30 15:09:35 EET 2018]; root of context hierarchy
+2018-11-30 15:09:36.162  INFO 14773 --- [ost-startStop-1] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2018-11-30 15:09:36.747  INFO 14773 --- [ost-startStop-1] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-11-30 15:09:37.170  INFO 14773 --- [ost-startStop-1] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3accc378] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:37.283  INFO 14773 --- [ost-startStop-1] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:37.331  INFO 14773 --- [ost-startStop-1] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:37.356  INFO 14773 --- [ost-startStop-1] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-30 15:09:37.386  INFO 14773 --- [ost-startStop-1] o.a.c.c.C.[.[.[/hello-world-calc]        : Initializing Spring embedded WebApplicationContext
+2018-11-30 15:09:37.387  INFO 14773 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2138 ms
+2018-11-30 15:09:38.068  INFO 14773 --- [ost-startStop-1] b.a.w.TomcatWebSocketContainerCustomizer : NonEmbeddedServletContainerFactory detected. Websockets support should be native so this normally is not a problem.
+2018-11-30 15:09:39.271  INFO 14773 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2018-11-30 15:09:39.275  INFO 14773 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'errorPageFilter' to: [/*]
+2018-11-30 15:09:39.276  INFO 14773 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-30 15:09:39.276  INFO 14773 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-30 15:09:40.062  INFO 14773 --- [ost-startStop-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5e056def: startup date [Fri Nov 30 15:09:35 EET 2018]; root of context hierarchy
+2018-11-30 15:09:40.218  INFO 14773 --- [ost-startStop-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String it.akademija.HelloController.hello()
+2018-11-30 15:09:40.218  INFO 14773 --- [ost-startStop-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/calc]}" onto it.akademija.HelloController$Result it.akademija.HelloController.calc(int,int)
+2018-11-30 15:09:40.221  INFO 14773 --- [ost-startStop-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2018-11-30 15:09:40.223  INFO 14773 --- [ost-startStop-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-30 15:09:40.277  INFO 14773 --- [ost-startStop-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:40.278  INFO 14773 --- [ost-startStop-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:40.362  INFO 14773 --- [ost-startStop-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-30 15:09:40.684  INFO 14773 --- [ost-startStop-1] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-11-30 15:09:40.706  INFO 14773 --- [ost-startStop-1] it.akademija.App                         : Started App in 5.995 seconds (JVM running for 41.709)
+2018-11-30 15:09:40.795  INFO 14773 --- [           main] org.apache.coyote.http11.Http11Protocol  : Starting ProtocolHandler ["http-bio-8081"]
+2018-11-30 15:16:35.409  INFO 14773 --- [bio-8081-exec-8] o.a.c.c.C.[.[.[/hello-world-calc]        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-11-30 15:16:35.409  INFO 14773 --- [bio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-11-30 15:16:35.471  INFO 14773 --- [bio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 61 ms
+2018-11-30 15:16:36.130 DEBUG 14773 --- [bio-8081-exec-8] jdbc.sqltiming                           :  org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:703)
+1. SELECT 1 + 2 AS answer
+ {executed in 17 msec}
+2018-11-30 15:16:36.172  INFO 14773 --- [bio-8081-exec-8] jdbc.resultsettable                      : 
+|-------|
+|answer |
+|-------|
+|3      |
+|-------|
+
+2018-11-30 15:17:30.629 DEBUG 14773 --- [bio-8081-exec-9] jdbc.sqltiming                           :  org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:703)
+2. SELECT 6 + 2 AS answer
+ {executed in 1 msec}
+2018-11-30 15:17:30.630  INFO 14773 --- [bio-8081-exec-9] jdbc.resultsettable                      : 
+|-------|
+|answer |
+|-------|
+|8      |
+|-------|
+
+2018-11-30 15:18:44.733 DEBUG 14773 --- [bio-8081-exec-1] jdbc.sqltiming                           :  org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:703)
+3. SELECT 1 + 2 AS answer
+ {executed in 1 msec}
+2018-11-30 15:18:44.736  INFO 14773 --- [bio-8081-exec-1] jdbc.resultsettable                      : 
+|-------|
+|answer |
+|-------|
+|3      |
+|-------|
+
+2018-11-30 15:26:02.015 DEBUG 14773 --- [bio-8081-exec-3] jdbc.sqltiming                           :  org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:703)
+4. SELECT 6 + 2 AS answer
+ {executed in 0 msec}
+2018-11-30 15:26:02.018  INFO 14773 --- [bio-8081-exec-3] jdbc.resultsettable                      : 
+|-------|
+|answer |
+|-------|
+|8      |
+|-------|

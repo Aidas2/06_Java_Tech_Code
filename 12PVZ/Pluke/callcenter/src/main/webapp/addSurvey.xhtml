@@ -1,0 +1,92 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="layout.xhtml">
+
+	<ui:define name="title">
+        Surveys
+    </ui:define>
+
+	<ui:define name="content">
+	<br/>
+		<h:form id="clientInfo">
+			<p:panelGrid columns="2">
+				<f:facet name="header">Customer Info</f:facet>
+				<h:outputText value="First Name" />
+				<h:outputText value="#{newClientBean.client.firstName}" />
+
+				<h:outputText value="Last Name" />
+				<h:outputText value="#{newClientBean.client.lastName}" />
+
+				<h:outputText value="City" />
+				<h:outputText value="#{newClientBean.client.city}" />
+
+				<h:outputText value="Phone number" />
+				<h:outputText value="#{newClientBean.client.phoneNumber}" />
+			</p:panelGrid>
+		</h:form>
+
+		<br />
+
+		<h:form id="newSurveyForm">
+			<h3>Add New Survey</h3>
+			<h:panelGrid columns="3">
+				<p:outputLabel for="surveyDate">Date:</p:outputLabel>
+				<p:calendar id="surveyDate" value="#{newSurveyBean.surveyDate}">
+				</p:calendar>
+				<p:message for="surveyDate"></p:message>
+
+				<p:outputLabel for="question">Question:</p:outputLabel>
+				<p:inputText id="question" value="#{newSurveyBean.question}"
+					required="true" />
+				<h:message for="question" />
+
+				<p:outputLabel for="answer">Answer:</p:outputLabel>
+				<p:inputText id="answer" value="#{newSurveyBean.value}"
+					required="true" />
+				<h:message for="answer" />
+
+			</h:panelGrid>
+			<h:commandLink
+				actionListener="#{newSurveyBean.saveSurvey(newClientBean.client)}"
+				value="Save survey" />
+		</h:form>
+
+		<br />
+
+		<h:form id="surveyTable">
+			<p:growl id="growl" sticky="true" />
+			<p:remoteCommand name="onload"
+				action="#{surveyListBean.updateGrowl()}" autoRun="true"
+				update="growl" />
+			<p:dataTable value="#{surveyListBean.findAllSurveysByClient(newClientBean.client)}" var="survey">
+				<f:facet name="header">Survey Details</f:facet>
+				<p:column headerText="Survey date">
+					<h:outputText value="#{survey.surveyDate}" />
+				</p:column>
+
+				<p:column headerText="Customer phone:">
+					<h:outputText value="#{survey.client.phoneNumber}" />
+				</p:column>
+
+				<p:column headerText="Question">
+					<h:outputText value="#{survey.question}" />
+				</p:column>
+				<p:column headerText="Answer (value)">
+					<h:outputText value="#{survey.value}" />
+				</p:column>
+				<p:column headerText="">
+					<h:commandLink
+						actionListener="#{surveyListBean.removeSurvey(survey)}"
+						value="Delete" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+	<br/>
+
+	<ui:define name="footer">
+		<ui:include src="footer.xhtml" />
+	</ui:define>
+</ui:composition>

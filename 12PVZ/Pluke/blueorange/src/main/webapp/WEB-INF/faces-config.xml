@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faces-config version="2.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.
+com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+		 
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver
+		</el-resolver>
+	</application>
+	
+	<navigation-rule>
+		<from-view-id>/trains.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-add-van</from-outcome>
+			<to-view-id>/vans.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list-trains</from-outcome>
+			<to-view-id>/trains.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/vans.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list-trains</from-outcome>
+			<to-view-id>/trains.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>show-add-van</from-outcome>
+			<to-view-id>/vans.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

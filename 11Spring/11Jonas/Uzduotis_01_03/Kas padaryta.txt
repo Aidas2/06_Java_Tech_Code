@@ -1,0 +1,6 @@
+Uzduotis_01_03
+Čia dabar išsivalysiu nuo senų dalykų ir pažiūrėsiu ar veikia.
+Atlikta. Ištrinta daug nereikalingų klasių ir veikia.
+--------------------------
+Čia yra pašalintos visos klasės, kurios nebereikalingos.
+Jos buvo naudotos iki Spring Data įdiegimo.

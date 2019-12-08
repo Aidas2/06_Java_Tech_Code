@@ -1,0 +1,7 @@
+Toliau reikia daryti 10 paskaitos 1 užduotį.
+--------------------------------------------------------------
+Čia padarytas geras produkto tnaujinimo metodas.
+
+Taip pat, padarytas automatinis produkto id suteikimas.
+
+Čia viskas dar iš 8 paskaitos galima sakyti.

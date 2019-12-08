@@ -1,0 +1,18 @@
+
+apt-get install nodejs-legacy npm
+npm install -g create-react-app
+create-react-app hello-world
+Pridedam bootstrap priklausomybę į package.json dependencies
+"bootstrap": "4.1.3",
+"jquery": "1.9.1",
+"popper.js": "1.14.3"
+npm install
+npm run build
+npm start
+
+
+
+mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war -Dmaven.tomcat.port=8081
+
+//07 pamoka 91 skaidre
+mvn clean install spring-boot:run -Dspring-boot.run.arguments=--server.port=8081
